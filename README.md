@@ -1,5 +1,9 @@
 # Traveller - Smart front end take-home technical test
 
+## Technical Test Notes
+
+I have used GraphQL to get and display the cities as expected, Typescript for types and Chakra for the UI components. Unit tests have been written using React Testing Library.
+
 ## Goals
 
 1.  Allow the user to search for cities using the provided input.
