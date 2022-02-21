@@ -11,6 +11,7 @@ import {
   List,
   ListItem,
   Spinner,
+  Text,
 } from '@chakra-ui/react'
 import { Search2Icon } from '@chakra-ui/icons'
 import { useMutation, useLazyQuery } from '@apollo/client'
@@ -41,6 +42,7 @@ export const Home: FC = () => {
       <Container maxW="container.md">
         <InputGroup>
           <Input
+            backgroundColor="rgba(218,165,32,0.2)"
             value={city}
             onChange={handleInputChange}
             onKeyPress={handleInputKeyPress}
@@ -50,7 +52,13 @@ export const Home: FC = () => {
           <InputRightElement
             onClick={handleClick}
             children={
-              <IconButton data-testid="search-icon-button" aria-label="Search city" size="sm" icon={<Search2Icon />} />
+              <IconButton
+                colorScheme="green"
+                data-testid="search-icon-button"
+                aria-label="Search city"
+                size="sm"
+                icon={<Search2Icon />}
+              />
             }
           />
         </InputGroup>
@@ -60,10 +68,12 @@ export const Home: FC = () => {
             data.cities.cities.map((city: ICities) => (
               <Fragment key={city.id}>
                 <ListItem>
-                  {city.name}
+                  <Text fontSize="3xl" fontWeight="bold">
+                    {city.name}
+                  </Text>
                   <Checkbox
                     marginLeft={8}
-                    defaultChecked={false}
+                    colorScheme="green"
                     isChecked={city.visited}
                     onChange={() => {
                       updateCity({
@@ -82,7 +92,7 @@ export const Home: FC = () => {
                   </Checkbox>
                   <Checkbox
                     marginLeft={8}
-                    defaultChecked={false}
+                    colorScheme="yellow"
                     isChecked={city.wishlist}
                     onChange={() => {
                       updateCity({

@@ -22,7 +22,7 @@ const mocks = [
   },
 ]
 
-describe('WishList', () => {
+describe('<WishList /> component', () => {
   it('renders without error', () => {
     render(
       <MockedProvider mocks={mocks} addTypename={false}>
